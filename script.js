@@ -117,11 +117,13 @@ function displayGameOver() {
   const $p = document.createElement('p');
   $p.textContent = "Game Over";
   $endGame.append($p);
+  const $p2 = document.createElement('p');
   if (winningPlayer !== null) {
-    const $p2 = document.createElement('p');
     $p2.textContent = `\nPlayer ${winningPlayer} wins!`;
-    $endGame.append($p2);
+  } else {
+    $p2.textContent = 'No More Moves';
   }
+  $endGame.append($p2);
   hideActivePlayer();
   $gameBoard.append($endGame);
 }
@@ -146,34 +148,3 @@ createSquaresArray();
 renderSquares();
 displayActivePlayer();
 $resetButton.addEventListener('click', resetGame);
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
